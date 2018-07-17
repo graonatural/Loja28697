@@ -1,0 +1,524 @@
+<!-- Fastcommerce - EstiloProduto.htm (Xtreme Responsive Store) -->
+<prodtop>
+  <link href="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.css" rel="stylesheet"><script src="/js/MagicToolbox/MagicZoomPlusV1/magiczoomplus.js"></script>
+<!-- Início Complemento Filtro menu esquerda --><script>
+  var iQtdProds=<QtProd>;
+</script>
+<style type="text/css">
+/* Estilos Refinamento de busca Barra Esquerda*/
+  .EstExibeFiltrosFC{width: 180px; min-height: 50px; position: relative;}
+  .EstTabFiltros{background-color: #FFFFFF; border: 1px solid #CCCCCC}
+  .EstTabFiltros tr td, .EstTabFiltros ul, .EstTabFiltros a{font-family: arial, tahoma;}
+
+  .EstTitFiltroFC{ width: 100%; height: auto; position: relative; font-size: 14px; color: #3b3b3b; background-color:#E8E8E8}
+  .EstTitFiltroFC b{display: block; padding: 5px; font-weight: normal;}
+  .EstListaFiltroFC{width:100%; min-height: 30px; position: relative; display: block; padding: 5px 0;}
+  .EstListaFiltroFC ul{padding: 5px; position: relative; display: block;}
+  #idSelPathCatQtFC, #idSelAdic1QtFC, #idSelAdic2QtFC, #idSelAdic3QtFC {width:100%;}
+
+  #idUlPathCatQtFC a,#idUlAdic1QtFC a,#idUlAdic2QtFC a,#idUlAdic3QtFC a{text-decoration:none; color:#0e6cb0;}
+  #idUlPathCatQtFC a:hover,#idUlAdic1QtFC a:hover,#idUlAdic2QtFC a:hover,#idUlAdic3QtFC a:hover{text-decoration:underline; color:333333}
+  #idUlPathCatQtFC li,#idUlAdic1QtFC li,#idUlAdic2QtFC li,#idUlAdic3QtFC li{font-size:12px;list-style-type:none;  margin:5px 10px 3px 5px; }
+  #idUlPathSearchFC input[type=text]{margin: 5px 0;border: 1px solid #cccccc;}
+  #idUlPathSearchFC, #idDivLinkAdvancedSearchFC{margin:5px}
+  #idLinkAdvancedSearchFC{font-size: 12px; color: #009900; text-decoration: none; display: block; padding: 5px 0}
+  #idLinkAdvancedSearchFC:hover{text-decoration:underline; color: #187095;}
+  .BotRemoveFiltros{text-align:center; text-decoration: none; display: block; width: 90%; padding:5px 0; margin:10px 0; font-weight: bold; border:1px solid #cccccc; background-color:#eeeeee; color:#254573}
+  .BotRemoveFiltros:hover{ text-decoration: underline; background-color: #009900; color: #ffffff;}  </style>
+  <div id="idFiltrosBusca" style="display:none">
+  <table border="0" cellpadding="0" cellspacing="0" class="EstTabFiltros" width="100%">
+    <tbody>
+      <tr>
+        <td class="EstTitFiltroFC"><b>Filtrando por</b></td>
+      </tr>
+      <tr id="idFiltroResultadoFC">
+        <td>
+        <div class="EstListaFiltroFC" id="idBuscaFiltro"><ListPathSearch></div>
+        </td>
+      </tr>
+      <tr id="idFiltroCatFC">
+        <td>
+        <div class="EstTitFiltroFC"><b><LegendaCats></b></div>
+
+        <div class="EstListaFiltroFC"><ListPathCatQt></div>
+        </td>
+      </tr>
+      <tr id="idFiltroAdic1FC">
+        <td>
+        <div class="EstTitFiltroFC"><b><NomeAdicional1></b></div>
+
+        <div class="EstListaFiltroFC"><ListAdic1Qt></div>
+        </td>
+      </tr>
+      <tr id="idFiltroAdic2FC">
+        <td>
+        <div class="EstTitFiltroFC"><b><NomeAdicional2></b></div>
+
+        <div class="EstListaFiltroFC"><ListAdic2Qt></div>
+        </td>
+      </tr>
+      <tr id="idFiltroAdic3FC">
+        <td>
+        <div class="EstTitFiltroFC"><b><NomeAdicional3></b></div>
+
+        <div class="EstListaFiltroFC"><ListAdic3Qt></div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+        <div id="idDivLinkAdvancedSearchFC"><LinkAdvancedSearch></div>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+        <a class="BotRemoveFiltros" data="imagesFC/svg/svgtagfc.svg?IDLoja" href="/prod,idloja,&lt;object" type="image/svg+xml">Remover filtros</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  <script type="text/javascript">
+if(iQtdProds>1)exibeRefinamentoBusca();
+</script>
+<!-- Fim Complemento Filtro menu esquerda --><!-- Click "Ver Mais" Scroll to description --><script>
+jQuery(document).ready(function (){
+  jQuery(".link-descr").click(function (){
+    jQuery('html, body').animate({
+      scrollTop: jQuery(".descr-prod").offset().top-90
+    }, 1000);
+  });
+});
+</script>
+<!-- Search Filters --><!-- Script Filters --><script>
+sF$.fnAdjustsFilters();
+
+iQtdProds=<QtProd>;
+
+if(iQtdProds=="1"){
+  var sPages=sF$.fnGetID("idPageCountFC");
+  if(sPages)sPages.style.display="none";
+}
+OffsetAutoPagFC=290;
+</script>
+<div id="idPagProdTop"></div>
+</prodtop>
+<prodlista>
+  <!-- Prod Lista -->
+  <FormProd>
+  <div class="DivListProd col-small-12 col-medium-6 col-large-4 col-xlarge-3" onclick="NoCascate('/prod,idloja,<IDLojaNum>,idproduto,<IDProduto>,<NomeProdUA>');">
+    <!-- Image -->
+    <div class="DivHomeImagemProd"><ImagemProd></div>
+      <div class="DivIntHomeProd"> 
+        <div class="DivHomeNomeProd">
+          <!-- Name -->
+          <a href="/prod,idloja,<IDLojaNum>,idproduto,<IDProduto>,<NomeProdUA>"><span class="HomeNomeProd text-overflow font-16"><NomeProd></span></a>
+        </div>
+        <!-- Price -->
+        <div class="DivHomePriceProd"><div id="idProdPrice<IDProduto>"><script>sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script></div></div>
+        <!-- FastPreview -->
+        <div class="DivHomeSpy hide-small"><a href="#Spy" onclick='bCascate=true;FCLib$.OpenRWD("/listaprodutos.asp?idloja=<IDLoja>&sty=9&int=1&idproduto=<IDProduto>","Disp","width=700,height=700")'>Espiar</a></div>
+        <!-- Details -->
+        <div class="DivHomeDetails"><a href="/prod,idloja,<IDLojaNum>,idproduto,<IDProduto>,<NomeProdUA>">Detalhes</a></div>
+      </div>
+  </div>
+</FormProd>
+</prodlista>
+<proddet>
+  <!-- Prod Det -->
+  <formprod>
+    <!-- Begin: Breadcrumb -->
+    <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6">
+    <div id="idBreadcrumb">
+    <ul>
+      <li>
+      <a class="ProductStyleBreadCrumblinkFC" href="categorias.asp?idloja=<IDLoja>">Categorias:</a>
+      </li>
+      <li><PathCat></li>
+    </ul>
+    </div>
+    </div>
+    <!-- End: Breadcrumb -->
+
+    <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6">
+    <div class="SocialProdLinks">
+    <ul class="ProductStyleULFC ProductStyleSocialIcons" id="idShareProd">
+      <li style="white-space:nowrap;"><span>
+      <a data="imagesFC/svg/svgtagfc.svg?IDLoja" href="javascript:MostraIndique(&lt;object" type="image/svg+xml">,<IDProduto>)"&gt;<img alt="E-mail" border="0" height="20" src="<baseloja>images/iconprodemail.svg" title="Recomende este produto" width="20"></a>
+      </span></li>
+      <li><span><sharegoogleplus></sharegoogleplus></span></li>
+      <li><span><ShareFacebook></span></li>
+      <li><span><ShareTwitter></span></li>
+      <li><span><sharepinterest></sharepinterest></span></li>
+      <li><span class="ShareWhatsApp show-small">
+      <a .="" data="imagesFC/svg/svgtagfc.svg?IDLojaNum" href="%22whatsapp://send?text=Veja" link:="" o="" object="" produto="" segue="" type="image/svg+xml">/p<IDProduto>" target="_blank"&gt;<img alt="Recomende este produto pelo WhatsApp" border="0" height="35" src="<baseloja>images/icwhatsapp.svg" title="Recomende este produto pelo WhatsApp" width="35"></a>
+      </span></li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="row"><!--Begin: Imagem Zoom -->
+    <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6">
+    <a class="MagicZoomPlus" href="<ImagemProdAmp>" rel="hint:false;initialize-on: mouseover;"><img alt="<NomeProd>" onerror="MostraImgOnError(this,0)" src="<ImagemProdDet>"></a>
+    </div>
+    <!--End: Imagem Zoom --><!-- Begin: ProdDet Row -->
+
+    <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6 text-left"><!-- Begin: Release - Product Name - Cod - Reviews -->
+    <div class="ProductStyleBoxFC ">
+    <ul class="ProductStyleULFC infoProd">
+      <li>
+      <h1 class="font-22"><NomeProd></h1>
+      </li>
+      <li><span class="prod-info">Ref:<CodProd> |</span> <span class="prod-info">Categoria:<NomeCat></span> <span class="raleaseProd"><lancamento></span></li>
+      <li class="text-left ProdRating"><script type="text/javascript">
+            iQtdOp=<OpiniaoQtd>;
+            if(iQtdOp==0){document.write("<div class='ProductStyleReviewOffBoxFC'><div class='NotaOpiniaoVazio NotaOpiniaoVazio1'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio2'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio3'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio4'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio5'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio6'></div></div>")}
+            else {document.write("<div class='ProductStyleReviewOnBoxFC'><div class='ProductStyleReviewStarsOnFC'><OpiniaoMedia></div><div class='ProductStyleReviewQtyOnFC'>(<a href='#OP' style='text-decoration:none;'><OpiniaoQtd></a>)</div></div>")}
+          </script>
+</li>
+      <li class="ProdRating font-14">
+      <a href="/Opiniao.asp?IDLoja=<IDLoja>&amp;IDProduto=<IDProduto>">Avalie este produto</a>
+      </li>
+    </ul>
+    </div>
+    <!-- End: Release - Product Name - Cod - Reviews --><!-- Begin: Price -->
+
+    <div class="ProductStyleBoxFC">
+    <p class="prod-price"><span class="font-22" id="PrecoProdPrinc"><PrecoSimples></span></p>
+
+    <div data="imagesFC/svg/svgtagfc.svg?IDProduto" id="%22idProdParcels&lt;object" type="image/svg+xml" class="ProdParcels" ></div>
+    <script type="text/javascript">sF$.fnShowParcels(<PrecoNum>,<MaxParcelasProdNum>,<IDProduto>);</script>
+<script type="text/javascript">sF$.fnShowEconomy(<PrecoNum>,<PrecoOri>);</script>
+<p></p>
+    </div>
+    <!-- End: Price --><!-- Begin: Buy -->
+
+    <div class="ProductStyleBoxFC"><linkcomprar64> </linkcomprar64></div>
+    <!-- End: Buy --><!-- Begin: AvisoDisp - LinkOpiniao - IndicaProd -->
+
+    <div class="ProductStyleBoxFC">
+    <ul class="ProductStyleULFC">
+      <li>
+      <p class="font-14"><AvisoDisp></p>
+      </li>
+    </ul>
+    </div>
+    <!-- End: AvisoDisp - LinkOpiniao - IndicaProd --><!-- Begin: Small Description -->
+
+    <div class="ProductStyleBoxFC">
+    <ul class="ProductStyleULFC">
+      <li>Características</li>
+      <li>
+      <p class="DescrLineHeight"><DescricaoCurta></p>
+      </li>
+      <li><Peso></li>
+      <li><Adicional1></li>
+      <li class="text-right">
+      <a class="link-descr" href="#">Saiba mais! <span><img64 height="25" plain="true" src="<baseloja>images/iconkreading.svg" width="25"></span></a>
+      </li>
+    </ul>
+    </div>
+    <!-- End: Small Description --><!-- Begin: Special Descriptors -->
+
+    <div class="ProductStyleBoxFC">
+    <ul class="%22adic-list%22" data="imagesFC/svg/svgtagfc.svg?IDProduto" name="%22Tab1Adic&lt;object" type="image/svg+xml">
+      <li>"&gt;
+      <li><Adicional1></li>
+      <li><Adicional2></li>
+      <li><Adicional3></li>
+      <li><AdicionalD1></li>
+      <li><AdicionalD2></li>
+      <li><AdicionalD3></li>
+      <li><Peso></li>
+      <li><Cor></li>
+      </li>
+    </ul>
+    </div>
+    <!-- End: Special Descriptors --><!-- Begin: SubProduct -->
+
+    <div class="ProductStyleBoxFC">
+    <hr>
+    <sub>
+      <formprod>
+        <div class="ProdListaDiv col-small-12 col-medium-12 col-large-6 col-xlarge-6 text-left"><!-- Begin: Release - SubProd Name - Cod - Reviews -->
+        <div class="ProductStyleBoxFC ">
+        <ul class="ProductStyleULFC">
+          <li>
+          <h1 class="font-22"><NomeProd></h1>
+          </li>
+          <li><span class="prod-info">Ref:<CodProd></span> <span class="raleaseProd"><lancamento></span></li>
+        </ul>
+        </div>
+        <!-- End: Release - SubProd Name - Cod - Reviews -->
+
+        <div class="DivDetImagemProd"><img onerror="MostraImgOnError(this,0)" src="<ImagemProdPri>"></div>
+        </div>
+
+        <div class="DivPrice col-small-12 col-medium-12 col-large-6 col-xlarge-6 text-left">
+        <div class="Price">
+        <div>
+        <div class="%22ProdPrice%22" data="imagesFC/svg/svgtagfc.svg?IDProduto" id="%22idProdPrice&lt;object" type="image/svg+xml">"&gt;</div>
+        </div>
+        <script>sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script>
+<!-- Begin: SubProd Buy -->
+
+        <div class="ProductStyleBoxFC"><linkcomprar64> </linkcomprar64></div>
+        <!-- End: SubProd Buy --><!-- Begin: AvisoDisp - LinkOpiniao - IndicaProd -->
+
+        <div class="ProductStyleBoxFC">
+        <ul class="ProductStyleULFC">
+          <li>
+          <p class="font-14"><AvisoDisp></p>
+          </li>
+        </ul>
+        </div>
+        <!-- End: AvisoDisp - LinkOpiniao - IndicaProd --></div>
+        </div>
+        <NomeCat><Descricao><!-- Begin: SubProd Special Descriptors -->
+
+        <div class="ProductStyleBoxFC">
+        <ul class="%22adic-list%22" data="imagesFC/svg/svgtagfc.svg?IDProduto" name="%22Tab1Adic&lt;object" type="image/svg+xml">
+          <li>"&gt;
+          <li><Adicional1></li>
+          <li><Adicional2></li>
+          <li><Adicional3></li>
+          <li><AdicionalD1></li>
+          <li><AdicionalD2></li>
+          <li><AdicionalD3></li>
+          <li><Peso></li>
+          <li><Cor></li>
+          </li>
+        </ul>
+        </div>
+        <!-- End: SubProd Special Descriptors -->
+
+        <hr>
+      </formprod>
+    </sub>
+    </div>
+    <!-- End New sub --><!-- Begin: ZipCode -->
+
+    <div class="ProductStyleBoxFC FreightContainerFC col-small-12 col-medium-12 col-large-8 col-xlarge-5">
+    <div data="imagesFC/svg/svgtagfc.svg?IDProduto" id="%22ShowCEP&lt;object" type="image/svg+xml">"&gt;</div>
+    </div>
+    <!-- End: ZipCode --></div>
+    </div>
+    <!-- End: ProdDet Row --><!-- Begin: Cross Selling - Description - Video - BarCode - Comments -->
+
+    <div class="MainContainer">
+    <div class="row">
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+    <hr></div>
+
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 CrossSellingFC"><CrossSelling></div>
+
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+    <hr></div>
+
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left descr-prod">
+    <div class="ProductStyleBoxDescriptionFC">
+    <h2>Descrição:</h2>
+    </div>
+
+    <div class="ProductStyleBoxDescriptionFC"><Descricao></div>
+
+    <div class="ProductStyleBoxDescriptionFC"><DescrHTM></div>
+
+    <div class="ProductStyleBoxDescriptionFC"><DescrURL></div>
+
+    <div class="ProductStyleBoxDescriptionFC"><VideoProd></div>
+
+    <div class="ProductStyleBoxDescriptionFC"><BarCode></div>
+
+    <div class="ProductStyleBoxDescriptionFC"><Comments></div>
+    </div>
+
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+    <hr></div>
+    </div>
+    </div>
+    <!-- End: Cross Selling - Description - Video - BarCode - Comments --><!-- Javascript ZipCode - Description CrossSelling --><script>
+FCLib$.onReady(sF$.fnCustomizeIconsSocialNetworks(true));
+fnShowCEP(<IDProduto>);
+
+jQuery(".EstNameProdCross").addClass('text-overflow');
+</script>
+</formprod>
+</proddet>
+<prodamp>
+  <!-- Prod Amp --><!-- Prod Det -->
+  <formprod>
+    <!-- Begin: Breadcrumb -->
+    <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+    <div id="idBreadcrumb">
+    <ul>
+      <li>
+      <a class="ProductStyleBreadCrumblinkFC" href="categorias.asp?idloja=<IDLoja>">Departamento:</a>
+      </li>
+      <li><PathCat></li>
+    </ul>
+    </div>
+    </div>
+    <!-- End: Breadcrumb --><!--Begin: Imagem Zoom -->
+
+    <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6">
+    <a class="MagicZoomPlus" href="<ImagemProdAmp>" rel="hint:false"><img src="<ImagemProdDet>"></a>
+    </div>
+    <!--End: Imagem Zoom -->
+
+    <div class="col-small-12 col-medium-12 col-large-6 col-xlarge-6 text-left"><!-- Begin: Release - Product Name - Cod - Reviews -->
+    <div class="ProductStyleBoxFC " id="idShareProd">
+    <ul class="ProductStyleULFC">
+      <li class="text-right"><span>
+      <a data="imagesFC/svg/svgtagfc.svg?IDProduto" href="%22javascript:sF$.fnShowSharing(&lt;object" type="image/svg+xml">)"&gt;<img alt="E-mail" border="0" height="20" src="<baseloja>images/iconprodemail.svg" title="Recomende este produto por e-mail" width="20"></a>
+      </span> <span><ShareFacebook></span> <span><ShareTwitter></span></li>
+      <li class="text-right"><lancamento></li>
+      <li>
+      <h1 class="font-22"><NomeProd></h1>
+      </li>
+      <li><span class="prod-info">Ref:<CodProd> |</span> <span class="prod-info">Categoria:<NomeCat></span></li>
+      <li class="text-left"><script type="text/javascript">
+            iQtdOp=<OpiniaoQtd>;
+            if(iQtdOp==0){document.write("<div class='ProductStyleReviewOffBoxFC'><div class='NotaOpiniaoVazio NotaOpiniaoVazio1'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio2'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio3'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio4'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio5'></div><div class='NotaOpiniaoVazio NotaOpiniaoVazio6'></div></div>")}
+            else {document.write("<div class='ProductStyleReviewOnBoxFC'><div class='ProductStyleReviewStarsOnFC'><OpiniaoMedia></div><div class='ProductStyleReviewQtyOnFC'>(<a href='#OP' style='text-decoration:none;'><OpiniaoQtd></a>)</div></div>")}
+          </script>
+</li>
+    </ul>
+    </div>
+    <!-- End: Release - Product Name - Cod - Reviews --><!-- Begin: Price -->
+
+    <div class="ProductStyleBoxFC">
+    <p class="prod-price"><span class="font-22"><PrecoSimples></span> <script type="text/javascript">sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script>
+<script type="text/javascript">sF$.fnShowEconomy(<PrecoNum>,<PrecoOri>);</script>
+</p>
+    </div>
+    <!-- End: Price --><!-- Begin: Small Description -->
+
+    <div class="ProductStyleBoxFC">
+    <ul class="ProductStyleULFC">
+      <li>
+      <p><DescricaoCurta></p>
+      </li>
+      <li class="text-right">
+      <a class="link-descr" href="#">Saiba mais <span><img height="25" plain="true" src="<baseloja>images/iconkreading.svg" width="25"></span></a>
+      </li>
+    </ul>
+    </div>
+    <!-- End: Small Description --><!-- Begin: Special Descriptors -->
+
+    <div class="ProductStyleBoxFC">
+    <ul class="%22adic-list%22" data="imagesFC/svg/svgtagfc.svg?IDProduto" name="%22Tab1Adic&lt;object" type="image/svg+xml">
+      <li>"&gt;
+      <li><Adicional1></li>
+      <li><Adicional2></li>
+      <li><Adicional3></li>
+      <li><AdicionalD1></li>
+      <li><AdicionalD2></li>
+      <li><AdicionalD3></li>
+      <li><Peso></li>
+      <li><Cor></li>
+      </li>
+    </ul>
+    </div>
+    <!-- End: Special Descriptors --><!-- Begin: Buy -->
+
+    <div class="ProductStyleBoxFC"><linkcomprar64> </linkcomprar64></div>
+    <!-- End: Buy --><!-- New sub -->
+
+    <div class="ProductStyleBoxFC">
+    <sub>
+      <formprod>
+        <div class="SubProductStyleBoxFC"><!-- Begin: Ref - Special Descriptors -->
+        <div class="SubProductStyleContentFC">
+        <div class="text-left"><span class="prod-info">Ref:<CodProd></span></div>
+
+        <div>
+        <ul class="%22adic-list%22" data="imagesFC/svg/svgtagfc.svg?IDProduto" name="%22Tab1Adic&lt;object" type="image/svg+xml">
+          <li>"&gt;
+          <li><Adicional1></li>
+          <li><Adicional2></li>
+          <li><Adicional3></li>
+          <li><AdicionalD1></li>
+          <li><AdicionalD2></li>
+          <li><AdicionalD3></li>
+          <li><Peso></li>
+          <li><Cor></li>
+          </li>
+        </ul>
+        </div>
+        </div>
+        <!-- End: Ref - Special Descriptors --><!-- Begin: Price -->
+
+        <div class="SubProductStyleContentFC text-center">
+        <p class="prod-price"><span class="font-22"><PrecoSimples></span> <script type="text/javascript">sF$.fnShowPrice(<PrecoNum>,<PrecoOri>,'<CodProd>',<MaxParcelasProdNum>,<IDProduto>);</script>
+<script type="text/javascript">sF$.fnShowEconomy(<PrecoNum>,<PrecoOri>);</script>
+</p>
+        </div>
+        <!-- End: Price --><!-- Begin: Buy -->
+
+        <div class="SubProductStyleContentFC"><linkcomprar64> </linkcomprar64></div>
+        <!-- End: Buy --></div>
+      </formprod>
+    </sub>
+    </div>
+    <!-- End New sub --><!-- Begin: AvisoDisp - LinkOpiniao - IndicaProd -->
+
+    <div class="ProductStyleBoxFC">
+    <ul class="ProductStyleULFC">
+      <li>
+      <p class="font-14"><AvisoDisp></p>
+      </li>
+      <li>
+      <p class="font-14"><LinkOpiniao></p>
+      </li>
+      <li>
+      <p class="font-14"><IndicaProd></p>
+      </li>
+    </ul>
+    </div>
+    <!-- End: AvisoDisp - LinkOpiniao - IndicaProd --><!-- Begin: ZipCode -->
+
+    <div class="ProductStyleBoxFC col-small-12 col-medium-12 col-large-8 col-xlarge-8">
+    <div data="imagesFC/svg/svgtagfc.svg?IDProduto" id="%22ShowCEP&lt;object" type="image/svg+xml">"&gt;</div>
+    </div>
+    <!-- End: ZipCode --></div>
+  </formprod>
+  <!-- Begin: Cross Selling - Description - Video - BarCode - Comments -->
+  <div class="MainContainer">
+  <div class="row">
+  <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+  <hr></div>
+
+  <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 CrossSellingFC"><CrossSelling></div>
+
+  <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+  <hr></div>
+
+  <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12 text-left descr-prod">
+  <div class="ProductStyleBoxDescriptionFC">
+  <h2>Descrição:</h2>
+  </div>
+
+  <div class="ProductStyleBoxDescriptionFC"><Descricao></div>
+
+  <div class="ProductStyleBoxDescriptionFC"><DescrHTM></div>
+
+  <div class="ProductStyleBoxDescriptionFC"><DescrURL></div>
+
+  <div class="ProductStyleBoxDescriptionFC"><VideoProd></div>
+
+  <div class="ProductStyleBoxDescriptionFC"><BarCode></div>
+
+  <div class="ProductStyleBoxDescriptionFC"><Comments></div>
+  </div>
+
+  <div class="col-small-12 col-medium-12 col-large-12 col-xlarge-12">
+  <hr></div>
+  </div>
+  </div>
+  <!-- End: Cross Selling - Description - Video - BarCode - Comments --><script>
+sF$.fnCustomizeIconsSocialNetworks();
+fnShowCEP(<IDProduto>);
+</script>
+</prodamp>
+<prodbottom>
+</prodbottom>
