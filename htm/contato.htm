@@ -1,0 +1,38 @@
+<h1>Contato: Equipe de atendimento Grão Natural:</h1>
+
+<p>Estamos esperando o seu contato... :)</p>
+
+<p>+55 (51) 3029-2048 ou (51) 3061-6240</p>
+
+<p>contato@graonatural.com.br</p>
+
+<p>Chat on-line com nossos especialistas:<br />
+Atendimento das 9h às 18h.</p>
+
+
+<form name="Form1" action="/faleconosco.asp" method="POST" onsubmit="return Valida(this)">
+  <input type="hidden" name="IDLoja" value="28697">
+
+
+  <div id="FCFormContainer">
+    <div class="inputsContainer">
+      <label class="FCLabelForm EstRequiredField">Nome:</label>
+      <input type="text" name="Nome" id="Nome" maxlength="50" value="" required="">
+      <input type="text" name="EmailRequestFC" id="EmailRequestFC" maxlength="50" value="">
+    </div>
+    <div class="inputsContainer">
+      <label class="FCLabelForm EstRequiredField">E-mail:</label>
+      <input type="email" name="Email" id="Email" maxlength="50" value="" required="">
+    </div>
+
+    <div class="inputsContainer">
+      <label class="FCLabelForm EstRequiredField">Mensagem:</label>
+      <textarea wrap="virtual" name="Mensagem" id="Mensagem" cols="40" rows="5" onkeydown="LimitaTexto(this,1024,0);" onkeyup="LimitaTexto(this,1024,0);" onchange="LimitaTexto(this,1024,0);" onblur="LimitaTexto(this,1024,0);" required=""></textarea>
+    </div>
+
+    <div class="inputButton">
+      <input type="submit" name="Enviar" id="Enviar" value=" Enviar " class="buttonForm">
+    </div>
+  </div>
+
+  </form>
